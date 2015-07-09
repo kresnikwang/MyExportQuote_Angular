@@ -1,198 +1,205 @@
 <div class="container">
 
-    <h3 align="left">Air Quote Calculator</h3>
+  <h3 align="left">Air Quote Calculator</h3>
 
-<form class="form" role="form" target="" align="left" ng-submit="airQuote()" name="quoteinformation">
+  <form class="form" role="form" target="" align="left" ng-submit="airQuote()" name="quoteinformation">
 
-                    <div class="form-group" id="result">
-                        <div class="col-sm-12 Padding-remove-left">
-    <textarea class="form-control" rows="2" align="center" style="font-size:18px;" name="finalresult">
-		Freight Cost: $
-		Total Charge: $
-	</textarea>
-     </div>
-                    </div>
+    <div class="form-group" id="result">
+      <div class="col-sm-12 Padding-remove-left">
+    <textarea class="form-control" rows="2" align="center" style="font-size:18px;" id="finalResult" name="finalResult">
+
+	  </textarea>
+      </div>
+    </div>
 
 
-                    <div class="form-group clearfix">
-                        <div class="col-sm-12 Padding-remove-left" align="center" id="buttons">
-                            <input onClick="goAction('');" class="btn btn-success" id="calculate" name="calculate"
-                                   value="Calculate">
-                            <input onClick="goAction('quotepdf.php');" class="btn btn-danger" id="quotepdf"
-                                   name="quotepdf" value="PDF Report">
-                        </div>
-                    </div>
+    <div class="form-group clearfix">
+      <div class="col-sm-12 Padding-remove-left" align="center" id="buttons">
+        <input type="submit" class="btn btn-primary" id="calculate" name="calculate"
+               value="Calculate">
+        <!--  onClick="goAction('');"  <input onClick="goAction('quotepdf.php');" class="btn btn-danger" id="quotepdf"-->
+               <!--name="quotepdf" value="PDF Report">-->
+      </div>
+    </div>
 
-                    <!-- <div class="form-group clearfix" id="Select_name">
-                        <div class="col-sm-4 Padding-remove-left">
+    <!-- <div class="form-group clearfix" id="Select_name">
+        <div class="col-sm-4 Padding-remove-left">
 
-                            <div class=" input-group">
-                                <span class="input-group-addon glyphicon glyphicon-plane" aria-hidden="true"></span>
-                                <select id="mySelect" class="form-control" name="Destination">
-                                    <option value="Please Select">Please Select</option>
-                                    <option selected='selected' value="Inchen">Inchen
-                                    </option>
-                                    <option selected='selected' value="ShangHai">ShangHai
-                                    </option>
-                                    <option selected='selected' value="Japan">Japan
-                                    </option>
-                                    <option selected='selected' value="Hong Kong">Hong Kong
-                                    </option>
-                                    <option selected='selected' value="Singapore">Singapore
-                                    </option>
-                                    <option selected='selected' value="Jakarta">Jakarta
-                                    </option>
-                                    <option selected='selected' value="Malaysia">Malaysia
-                                    </option>
-                                    <option selected='selected' value="Taipei">Taipei
-                                    </option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
+            <div class=" input-group">
+                <span class="input-group-addon glyphicon glyphicon-plane" aria-hidden="true"></span>
+                <select id="mySelect" class="form-control" name="Destination">
+                    <option value="Please Select">Please Select</option>
+                    <option selected='selected' value="Inchen">Inchen
+                    </option>
+                    <option selected='selected' value="ShangHai">ShangHai
+                    </option>
+                    <option selected='selected' value="Japan">Japan
+                    </option>
+                    <option selected='selected' value="Hong Kong">Hong Kong
+                    </option>
+                    <option selected='selected' value="Singapore">Singapore
+                    </option>
+                    <option selected='selected' value="Jakarta">Jakarta
+                    </option>
+                    <option selected='selected' value="Malaysia">Malaysia
+                    </option>
+                    <option selected='selected' value="Taipei">Taipei
+                    </option>
+                </select>
+            </div>
+        </div>
+    </div>
 
-                    <div class="form-group" id="Notes_name">
-                        <div class="col-sm-12 input-group">
-                            <span class="input-group-addon">NOTE:</span>
-                            <input type="text" class="form-control" placeholder="Input"
-                                   value="" id="Notes" name="Notes">
-                        </div>
-                    </div> -->
-					
-                    <div class="form-group" id="airrate_name">
-                        <label class=" control-label">Air Rate/kg</label>
+    <div class="form-group" id="Notes_name">
+        <div class="col-sm-12 input-group">
+            <span class="input-group-addon">NOTE:</span>
+            <input type="text" class="form-control" placeholder="Input"
+                   value="" id="Notes" name="Notes">
+        </div>
+    </div> -->
 
-                        <div class="col-sm-12 input-group">
-                            <span class="input-group-addon">$</span>
-                            <input type="text" class="form-control" placeholder="Input"
-                                   value="" name="airrate">
-                            <span class="input-group-addon">/kg</span>
-                        </div>
-                    </div>
-					
-					<div class="form-group clearfix" id="NoC">
-                        <div class="col-sm-4 Padding-remove-left">
-                            <label class=" control-label">Number of Cases/pallet</label>
+    <h4 class="freight_title">Air Rate</h4>
 
-							<div class="input-group">
-                            <span class="input-group-addon glyphicon glyphicon-inbox"></span>
-                            <input type="number" class="form-control" oninput="weight()" placeholder="Input"
-                                   value="" id="NoCS" name="NoCS">
-							</div>
-                        </div>
-                        <div class="col-sm-4 Padding-remove-left">
-							<label class=" control-label">Number of Pallets</label>
+    <div class="form-group clearfix" id="airrate_name">
+      <div class="col-sm-6 col-md-6 col-lg-6 Padding-remove-left">
+        <form>
+        <input type="radio" name="colors" id="looseRate" checked="true">
+        <label class=" control-label">Loose Rate/kg  </label>
+        <input type="radio" name="colors" id="LD7" checked="">
+        <label class=" control-label">LD7/PMC</label>
+        </form>
 
-							<div class="input-group">
-                            <span class="input-group-addon glyphicon glyphicon-inbox"></span>
-                            <input type="number" class="form-control" placeholder="Input"
-                                   value="" name="NOPS">
-							</div>
-                        </div>
-                    </div>
+      <div class="input-group">
+        <span class="input-group-addon">
+        $
+        </span>
+        <input type="number" class="form-control" placeholder="Input"
+               value=2.00 id="airRate">
+      </div>
+      </div>
 
-                    <div class="form-group clearfix" id="weight_name">
-                        <div class="col-sm-4 Padding-remove-left">
-                            <label class=" control-label">Gross Weight/Case</label>
+    </div>
 
-                            <div class="input-group">
-                                <input type="text" class="form-control" oninput="weight()" placeholder="Input"
-                                       value=""
-                                       id="weightpercase" name="weightpercase">
-                                <span class="input-group-addon">kg</span>
-                            </div>
-                        </div>
-                        <div class="col-sm-4 Padding-remove-left">
-                            <label class=" control-label">Gross Weight/Pallet</label>
+    <h4 class="freight_title">Pallet Information </h4>
 
-                            <div class="input-group">
-                                <input type="text" class="form-control" oninput="weight()" placeholder="Input"
-                                       value=""
-                                       id="weightperpallet" name="weightperpallet">
-                                <span class="input-group-addon">kg</span>
-                            </div>
-                        </div>
-                    </div>
-					
-					<h4>Charges Per Pallet </h4>
-					<div class="form-group clearfix" id="Charges_Per_Pallet">
-                    <div class="col-sm-4 Padding-remove-left" id="trucking_name">
-                        <label class=" control-label">Trucking</label>
+    <div class="form-group clearfix" id="NoC">
+      <div class="col-sm-6 col-md-4 col-lg-3 Padding-remove-left">
+        <label class=" control-label">Number of Cases/pallet</label>
+        <div class="input-group">
+          <span class="input-group-addon glyphicon glyphicon-inbox"></span>
+          <input type="number" class="form-control" oninput="weight()" placeholder="Input"
+                 value=192 id="NoCS" name="NoCS">
+        </div>
+      </div>
 
-                        <div class="input-group">
-                            <span class="input-group-addon">$</span>
-                            <input type="text" class="form-control" placeholder="Input"
-                                   value="" name="Trucking">
-                        </div>
-                    </div>
+      <div class="col-sm-6 col-md-4 col-lg-3 Padding-remove-left">
+        <label class=" control-label">Number of Pallets</label>
+        <div class="input-group">
+          <span class="input-group-addon glyphicon glyphicon-inbox"></span>
+          <input type="number" class="form-control" placeholder="Input"
+                 value=2 id="NoPS" name="NoPS">
+        </div>
+      </div>
 
-                    <div class="col-sm-4 Padding-remove-left" id="coolguard_name">
-                        <label class=" control-label">Coolguard</label>
+      <div class="col-sm-6 col-md-4 col-lg-3 Padding-remove-left">
+        <label class=" control-label">Gross Weight/Case</label>
+        <div class="input-group">
+          <input type="number" class="form-control" oninput="weight()" placeholder="Input"
+                 value=0.00
+                 id="weightPerCase" name="weightPerCase">
+          <span class="input-group-addon">kg</span>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3 Padding-remove-left">
+        <label class=" control-label">Gross Weight/Pallet</label>
+        <div class="input-group">
+          <input type="number" class="form-control" oninput="weight()" placeholder="Input"
+                 value=0.00
+                 id="weightPerPallet" name="weightPerPallet">
+          <span class="input-group-addon">kg</span>
+        </div>
+      </div>
+    </div>
 
-                        <div class="input-group">
-                            <span class="input-group-addon">$</span>
-                            <input type="text" class="form-control" placeholder="Input"
-                                   value="" name="coolguard">
-                        </div>
-                    </div>
+    <h4 class="freight_title">Charges Per Pallet </h4>
 
-                    <div class="col-sm-4 Padding-remove-left" id="OtherPalletCharge_name">
-                        <label class=" control-label">Additional Charge</label>
+    <div class="form-group clearfix" id="Charges_Per_Pallet">
+      <div class="col-sm-6 col-md-4 col-lg-3 Padding-remove-left" id="trucking_name">
+        <label class=" control-label">Trucking</label>
 
-                        <div class="input-group">
-                            <span class="input-group-addon">$</span>
-                            <input type="text" class="form-control" placeholder="Input"
-                                   value=""
-                                   name="OtherPalletCharge">
-                        </div>
-                    </div>
-					</div>
-					
-					<h4>Charges Per Shipment </h4>
-					
-					<div class="form-group clearfix" id="Charges_Per_Shipment">
-                    <div class="col-sm-4 Padding-remove-left" id="temperRecorder">
-					
-                        <label class=" control-label">Temper Recorder</label>
+        <div class="input-group">
+          <span class="input-group-addon">$</span>
+          <input type="number" class="form-control" placeholder="Input"
+                 value=0.00 id="trucking" name="trucking">
+        </div>
+      </div>
 
-                        <div class="input-group">
-                            <span class="input-group-addon">$</span>
-                            <input type="text" class="form-control" placeholder="Input"
-                                   value=""
-                                   name="temperRecorder">
-                        </div>
-                    </div>
+      <div class="col-sm-6 col-md-4 col-lg-3 Padding-remove-left" id="coolguard_name">
+        <label class=" control-label">Cool Guard</label>
 
-                    <div class="col-sm-4 Padding-remove-left" id="documentfee_name">
-                        <label class=" control-label">Document</label>
+        <div class="input-group">
+          <span class="input-group-addon">$</span>
+          <input type="number" class="form-control" placeholder="Input"
+                 value=40.00 id="coolGuard" name="coolGuard">
+        </div>
+      </div>
 
-                        <div class="input-group">
-                            <span class="input-group-addon">$</span>
-                            <input type="text" class="form-control" placeholder="Input"
-                                   value="" name="documentfee">
-                        </div>
-                    </div>
+      <div class="col-sm-6 col-md-4 col-lg-3 Padding-remove-left" id="OtherPalletCharge_name">
+        <label class=" control-label">Additional Charge</label>
 
-                    <div class="col-sm-4 Padding-remove-left" id="phyto_name">
-                        <label class=" control-label">Phyto Charge</label>
+        <div class="input-group">
+          <span class="input-group-addon">$</span>
+          <input type="number" class="form-control" placeholder="Input"
+                 value=0.00 id="otherPalletCharge" name="otherPalletCharge">
+        </div>
+      </div>
+    </div>
 
-                        <div class="input-group">
-                            <span class="input-group-addon">$</span>
-                            <input type="text" class="form-control" placeholder="Input"
-                                   value="" name="phyto">
-                        </div>
-                    </div>
+    <h4 class="freight_title">Charges Per Shipment </h4>
 
-                    <div class="col-sm-4 Padding-remove-left" id="otherCharge_name">
-                        <label class=" control-label">Additional Charge</label>
+    <div class="form-group clearfix" id="Charges_Per_Shipment">
+      <div class="col-sm-6 col-md-4 col-lg-3 Padding-remove-left">
 
-                        <div class="input-group">
-                            <span class="input-group-addon">$</span>
-                            <input type="text" class="form-control" placeholder="Input"
-                                   value="" name="otherCharge">
-                        </div>
-                    </div>
-				</div>	
-                </form>
+        <label class=" control-label">Temper Recorder</label>
+
+        <div class="input-group">
+          <span class="input-group-addon">$</span>
+          <input type="number" class="form-control" placeholder="Input"
+                 value=0.00 id="temperRecorder" name="tempRecorder">
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 col-lg-3 Padding-remove-left">
+        <label class=" control-label">Document</label>
+
+        <div class="input-group">
+          <span class="input-group-addon">$</span>
+          <input type="number" class="form-control" placeholder="Input"
+                 value=50.00 id="documentFee" name="documentFee">
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 col-lg-3 Padding-remove-left" id="phyto_name">
+        <label class=" control-label">Phyto Charge</label>
+
+        <div class="input-group">
+          <span class="input-group-addon">$</span>
+          <input type="number" class="form-control" placeholder="Input"
+                 value=0.00 id="phytoFee" name="phytoFee">
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 col-lg-3 Padding-remove-left" id="otherCharge_name">
+        <label class=" control-label">Additional Charge</label>
+
+        <div class="input-group">
+          <span class="input-group-addon">$</span>
+          <input type="number" class="form-control" placeholder="Input"
+                 value=0.00 id="otherCharge" name="otherCharge">
+        </div>
+      </div>
+    </div>
+  </form>
 </div>
+
 <script src="scripts/js/freightQuote.js"></script>
