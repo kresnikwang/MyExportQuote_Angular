@@ -1,7 +1,7 @@
 [
   {
     "title": "APPLES",
-    "url": "assets/saved_resource(1).jpeg",
+    "url": "images/saved_resource(1).jpeg",
     "package": "Tray Pack, Heavy Pack",
     "PalletSize": "Ocean Shipment: 49 Boxes/Pallet",
     "reeferSetting": [
@@ -14,7 +14,7 @@
   },
   {
     "title": "BLUEBERRIES",
-    "url": "assets/saved_resource(17).jpeg",
+    "url": "images/saved_resource(17).jpeg",
     "package": "",
     "PalletSize": "California: Air: 192 Cases/Pallet; Ocean:300 Cases/Pallet",
     "reeferSetting": [
@@ -27,7 +27,7 @@
   },
   {
     "title": "AVOCADOS",
-    "url": "assets/saved_resource(2).jpeg",
+    "url": "images/saved_resource(2).jpeg",
     "package": "Double Layers: 25lbs, Single Layer: 15lbs",
     "PalletSize": "34F",
     "reeferSetting": [
@@ -40,7 +40,7 @@
   },
   {
     "title": "CANTALOUPE",
-    "url": "assets/saved_resource(3).jpeg",
+    "url": "images/saved_resource(3).jpeg",
     "package": "",
     "PalletSize": "",
     "reeferSetting": [
@@ -53,7 +53,7 @@
   },
   {
     "title": "GRAPES",
-    "url": "assets/saved_resource(4).jpeg",
+    "url": "images/saved_resource(4).jpeg",
     "package": "California: Air: 192 Cases/Pallet; Ocean:300 Cases/Pallet ",
     "PalletSize": "",
     "reeferSetting": [
@@ -66,7 +66,7 @@
   },
   {
     "title": "CITRUS",
-    "url": "assets/saved_resource(5).jpeg",
+    "url": "images/saved_resource(5).jpeg",
     "package": "",
     "PalletSize": "",
     "reeferSetting": [
@@ -79,7 +79,7 @@
   },
   {
     "title": "PEARS",
-    "url": "assets/saved_resource(6).jpeg",
+    "url": "images/saved_resource(6).jpeg",
     "package": "",
     "PalletSize": "",
     "reeferSetting": [
@@ -92,7 +92,7 @@
   },
   {
     "title": "APRICOTS",
-    "url": "assets/saved_resource(8).jpeg",
+    "url": "images/saved_resource(8).jpeg",
     "package": "Double-Layers/Volume Fill",
     "PalletSize": "Air: 64 or 60 Cases/Pallet",
     "reeferSetting": [
@@ -105,7 +105,7 @@
   },
   {
     "title": "BLACKBERRIES",
-    "url": "assets/saved_resource(9).jpeg",
+    "url": "images/saved_resource(9).jpeg",
     "package": "",
     "PalletSize": "",
     "reeferSetting": [
@@ -118,7 +118,7 @@
   },
   {
     "title": "CHERRIES",
-    "url": "assets/saved_resource(10).jpeg",
+    "url": "images/saved_resource(10).jpeg",
     "package": "",
     "PalletSize": "",
     "reeferSetting": [
@@ -131,7 +131,7 @@
   },
   {
     "title": "KIWIFRUIT",
-    "url": "assets/saved_resource(11).jpeg",
+    "url": "images/saved_resource(11).jpeg",
     "package": "",
     "PalletSize": "",
     "reeferSetting": [
@@ -144,7 +144,7 @@
   },
   {
     "title": "NECTARINES",
-    "url": "assets/saved_resource(12).jpeg",
+    "url": "images/saved_resource(12).jpeg",
     "package": "",
     "PalletSize": "",
     "reeferSetting": [
@@ -157,7 +157,7 @@
   },
   {
     "title": "CUCUMBERS",
-    "url": "assets/saved_resource(18).jpeg",
+    "url": "images/saved_resource(18).jpeg",
     "package": "",
     "PalletSize": "",
     "reeferSetting": [
@@ -170,7 +170,7 @@
   },
   {
     "title": "PEACHES",
-    "url": "assets/saved_resource(20).jpeg",
+    "url": "images/saved_resource(20).jpeg",
     "package": "",
     "PalletSize": "",
     "reeferSetting": [
@@ -183,7 +183,7 @@
   },
   {
     "title": "PEPPERS",
-    "url": "assets/saved_resource(13).jpeg",
+    "url": "images/saved_resource(13).jpeg",
     "package": "",
     "PalletSize": "",
     "reeferSetting": [
@@ -196,7 +196,7 @@
   },
   {
     "title": "WATERMELONS",
-    "url": "assets/saved_resource(15).jpeg",
+    "url": "images/saved_resource(15).jpeg",
     "package": "",
     "PalletSize": "",
     "reeferSetting": [
@@ -209,7 +209,7 @@
   },
   {
     "title": "ASPARAGUS",
-    "url": "assets/saved_resource(16).jpeg",
+    "url": "images/saved_resource(16).jpeg",
     "package": " ",
     "PalletSize": "33F, 10 cpm",
     "reeferSetting": [
@@ -222,7 +222,7 @@
   },
   {
     "title": "TOMATOES",
-    "url": "assets/saved_resource(22).jpeg",
+    "url": "images/saved_resource(22).jpeg",
     "package": "",
     "PalletSize": "",
     "reeferSetting": [

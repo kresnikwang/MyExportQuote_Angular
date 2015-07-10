@@ -1,0 +1,59 @@
+<div class="guide">
+    <img ng-src="{{ detail.url }}">
+    <h2 class="guide-title">{{ detail.title }} </h2>
+    <table id="guides" class="table table-striped table-hover">
+      <tbody>
+      <tr>
+        <td>
+          Package:
+        </td>
+        <td>
+          {{ detail.package }}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Pallet Size:
+        </td>
+        <td>
+          {{ detail.PalletSize }}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Temperature:
+        </td>
+        <td>
+          {{ detail.reeferSetting[0] }}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Ventilation:(Air Exchange: cbm/h)
+        </td>
+        <td>
+          {{ detail.reeferSetting[1] }}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Humidity(relative %)
+        </td>
+        <td>
+          {{ detail.reeferSetting[2] }}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Approximate Shelf Life:
+        </td>
+        <td>
+          {{ detail.reeferSetting[3] }}
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <button class="default guide-button" onclick="window.history.back()">Go Back</button>
+
+</div>
+

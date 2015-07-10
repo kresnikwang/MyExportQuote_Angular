@@ -25,6 +25,10 @@ angular
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
+	  .when('/guides/:id',{
+  		controller: 'GuideController',
+    	templateUrl: 'views/guide.html'
+	  })
       .when('/freight', {
         templateUrl: 'views/freight.html',
         controller: 'FreightCtrl'
@@ -37,3 +41,12 @@ angular
         redirectTo: '/'
       });
   });
+
+  
+/////////////////////////////////////////////////////
+$(document).ready(function() {
+    $(".header li").on("click", function() {
+        $(".header li").removeClass("active");
+        $(this).addClass("active");
+    });
+});

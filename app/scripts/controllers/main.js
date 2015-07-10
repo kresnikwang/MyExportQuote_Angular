@@ -8,10 +8,8 @@
  * Controller of the myexportquoteApp
  */
 angular.module('myexportquoteApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('MainCtrl', ['$scope', 'guides', function($scope, guides) {
+  guides.success(function(data) {
+    $scope.guides = data;
   });
+}]);

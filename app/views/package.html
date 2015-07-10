@@ -1,5 +1,5 @@
 <div class="container" id="packconverter"> 
-    <h3 align="left">Pack Converter</h3>
+    <h2 align="center">Pack Converter</h2>
 	  <div><br/></div>
 	
     <form class="form-inline" align="left">
@@ -10,16 +10,12 @@
     <input type="text" id="price1" class="form-control"  placeholder="Input" oninput="price()">
 	</div>
   </div>
-
   
    <div><br/></div>
-  
 
     <div class="form-group">
 	<label class="control-label" for="quantity1">Original Pack Size:</label>
     <input type="text" class="form-control"  placeholder="Input" id="quantity1" value="12" oninput="price()">
-	</div>
-	<div class="form-group">
 	<label for="weight1" >X</label>
 	<input type="text" class="form-control"  placeholder="Input" id="weight1"   value="6" oninput="price()">
 	</div>
@@ -36,9 +32,7 @@
     <div class="form-group">
 	<label class="control-label" for="quantity2">Quote Pack Size:</label>
     <input type="text" class="form-control"  placeholder="Input" id="quantity2" value="12" oninput="price()">
-	</div>
-	<div class="form-group">
-	<label for="weight2">X</label>
+	<label class="" for="weight2">X</label>
 	<input type="text" class="form-control"  placeholder="Input" id="weight2"   value="4.4" oninput="price()">
 	</div>
 	<select id="select2" class="form-control" name="unit2" onchange="price()">
@@ -50,9 +44,9 @@
   <div><br/></div>
     
 
-  <div class="form-group">
+  <div class="form-group form-inline">
   <label class="control-label" for="equalPrice">Price Equivalent:</label>
-  <div class="input-group">
+  <div class="input-group col-xs-4">
   <span class="input-group-addon">$</span>
   <input class="form-control" id="equalPrice" style="font-size:18px;" readonly>
   </div>

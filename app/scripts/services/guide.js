@@ -2,8 +2,8 @@
  * 
  */
 
-app.factory('guides', ['$http', function($http) {
-  return $http.get('js/services/guide.json')
+angular.module('myexportquoteApp').factory('guides', ['$http', function($http) {
+  return $http.get('scripts/services/guide.json')
          .success(function(data) {
            return data;
          })

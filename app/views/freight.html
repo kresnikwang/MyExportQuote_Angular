@@ -1,6 +1,6 @@
 <div class="container">
 
-  <h3 align="left">Air Quote Calculator</h3>
+  <h2 align="center">Air Freight</h2>
 
   <form class="form" role="form" target="" align="left" ng-submit="airQuote()" name="quoteinformation">
 
@@ -11,8 +11,7 @@
 	  </textarea>
       </div>
     </div>
-
-
+	
     <div class="form-group clearfix">
       <div class="col-sm-12 Padding-remove-left" align="center" id="buttons">
         <input type="submit" class="btn btn-primary" id="calculate" name="calculate"
@@ -63,9 +62,11 @@
     <div class="form-group clearfix" id="airrate_name">
       <div class="col-sm-6 col-md-6 col-lg-6 Padding-remove-left">
         <form>
-        <input type="radio" name="colors" id="looseRate" checked="true">
+        <input type="radio" name="airRateType" id="looseRate" checked="true">
         <label class=" control-label">Loose Rate/kg  </label>
-        <input type="radio" name="colors" id="LD7" checked="">
+		<input type="radio" name="airRateType" id="LD3" >
+        <label class=" control-label">LD3</label>
+        <input type="radio" name="airRateType" id="LD7" >
         <label class=" control-label">LD7/PMC</label>
         </form>
 
@@ -73,7 +74,7 @@
         <span class="input-group-addon">
         $
         </span>
-        <input type="number" class="form-control" placeholder="Input"
+        <input type="text" class="form-control" placeholder="Input"
                value=2.00 id="airRate">
       </div>
       </div>
@@ -84,7 +85,7 @@
 
     <div class="form-group clearfix" id="NoC">
       <div class="col-sm-6 col-md-4 col-lg-3 Padding-remove-left">
-        <label class=" control-label">Number of Cases/pallet</label>
+        <label class=" control-label">Number of Cases/Pallet</label>
         <div class="input-group">
           <span class="input-group-addon glyphicon glyphicon-inbox"></span>
           <input type="number" class="form-control" oninput="weight()" placeholder="Input"
@@ -105,7 +106,7 @@
         <label class=" control-label">Gross Weight/Case</label>
         <div class="input-group">
           <input type="number" class="form-control" oninput="weight()" placeholder="Input"
-                 value=0.00
+                 value=0
                  id="weightPerCase" name="weightPerCase">
           <span class="input-group-addon">kg</span>
         </div>
@@ -114,8 +115,7 @@
         <label class=" control-label">Gross Weight/Pallet</label>
         <div class="input-group">
           <input type="number" class="form-control" oninput="weight()" placeholder="Input"
-                 value=0.00
-                 id="weightPerPallet" name="weightPerPallet">
+                 value=0 id="weightPerPallet" name="weightPerPallet">
           <span class="input-group-addon">kg</span>
         </div>
       </div>
@@ -130,7 +130,7 @@
         <div class="input-group">
           <span class="input-group-addon">$</span>
           <input type="number" class="form-control" placeholder="Input"
-                 value=0.00 id="trucking" name="trucking">
+                 value=0 id="trucking" name="trucking">
         </div>
       </div>
 
@@ -150,7 +150,7 @@
         <div class="input-group">
           <span class="input-group-addon">$</span>
           <input type="number" class="form-control" placeholder="Input"
-                 value=0.00 id="otherPalletCharge" name="otherPalletCharge">
+                 value=0 id="otherPalletCharge" name="otherPalletCharge">
         </div>
       </div>
     </div>
@@ -165,7 +165,7 @@
         <div class="input-group">
           <span class="input-group-addon">$</span>
           <input type="number" class="form-control" placeholder="Input"
-                 value=0.00 id="temperRecorder" name="tempRecorder">
+                 value=0 id="temperRecorder" name="tempRecorder">
         </div>
       </div>
 
@@ -185,7 +185,7 @@
         <div class="input-group">
           <span class="input-group-addon">$</span>
           <input type="number" class="form-control" placeholder="Input"
-                 value=0.00 id="phytoFee" name="phytoFee">
+                 value=0 id="phytoFee" name="phytoFee">
         </div>
       </div>
 
@@ -195,7 +195,7 @@
         <div class="input-group">
           <span class="input-group-addon">$</span>
           <input type="number" class="form-control" placeholder="Input"
-                 value=0.00 id="otherCharge" name="otherCharge">
+                 value=0 id="otherCharge" name="otherCharge">
         </div>
       </div>
     </div>
