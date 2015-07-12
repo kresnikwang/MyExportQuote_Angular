@@ -11,13 +11,13 @@
 	  </textarea>
       </div>
     </div>
-	
+
     <div class="form-group clearfix">
       <div class="col-sm-12 Padding-remove-left" align="center" id="buttons">
         <input type="submit" class="btn btn-primary" id="calculate" name="calculate"
                value="Calculate">
         <!--  onClick="goAction('');"  <input onClick="goAction('quotepdf.php');" class="btn btn-danger" id="quotepdf"-->
-               <!--name="quotepdf" value="PDF Report">-->
+        <!--name="quotepdf" value="PDF Report">-->
       </div>
     </div>
 
@@ -58,69 +58,74 @@
     </div> -->
 
     <h4 class="freight_title">Air Rate</h4>
-	
+
     <div class="form-group clearfix" id="airrate_name">
       <div class="col-sm-6 col-md-6 col-lg-6 Padding-remove-left">
         <form>
-        <input type="radio" name="airRateType" id="looseRate" checked="true">
-        <label class=" control-label">Loose Rate/kg  </label>
-		<input type="radio" name="airRateType" id="LD3" >
-        <label class=" control-label">LD3</label>
-        <input type="radio" name="airRateType" id="LD7" >
-        <label class=" control-label">LD7/PMC</label>
+          <label class=" control-label">
+            <input type="radio" name="airRateType" id="looseRate" ng-checked="true" ng-model="airType"
+                   ng-value="true">
+            Loose Rate/kg </label>
+          <label class=" control-label">
+            <input type="radio" name="airRateType" id="LD7" ng-model="airType" ng-value="false">
+            LD3/LD7/PMC</label>
         </form>
 
-      <div class="input-group">
+        <div class="input-group">
         <span class="input-group-addon">
         $
         </span>
-        <input type="text" class="form-control" placeholder="Input"
-               value=2.00 id="airRate">
-      </div>
+          <input ng-enter="airQuote()" type="text" class="form-control" placeholder="Input"
+                 value=2.00 id="airRate">
+        </div>
       </div>
 
     </div>
-	<hr>
+    <hr>
     <h4 class="freight_title">Pallet Information </h4>
 
     <div class="form-group clearfix" id="NoC">
       <div class="col-sm-6 col-md-4 col-lg-3 Padding-remove-left">
         <label class=" control-label">Number of Cases/Pallet</label>
+
         <div class="input-group">
           <span class="input-group-addon glyphicon glyphicon-inbox"></span>
-          <input type="number" class="form-control" oninput="weight()" placeholder="Input"
-                 value=192 id="NoCS" name="NoCS">
+          <input ng-enter="airQuote()" type="number" class="form-control" oninput="weight()" placeholder="Input"
+                 value=228 id="NoCS" name="NoCS">
         </div>
       </div>
 
       <div class="col-sm-6 col-md-4 col-lg-3 Padding-remove-left">
         <label class=" control-label">Number of Pallets</label>
+
         <div class="input-group">
-          <span class="input-group-addon glyphicon glyphicon-inbox"></span>
-          <input type="number" class="form-control" placeholder="Input"
+          <span class="input-group-addon glyphicon glyphicon glyphicon-list"></span>
+          <input ng-enter="airQuote()" type="number" class="form-control" placeholder="Input"
                  value=2 id="NoPS" name="NoPS">
         </div>
       </div>
 
-      <div class="col-sm-6 col-md-4 col-lg-3 Padding-remove-left">
+      <div class="col-sm-6 col-md-4 col-lg-3 Padding-remove-left" ng-show="airType">
         <label class=" control-label">Gross Weight/Case</label>
+
         <div class="input-group">
-          <input type="number" class="form-control" oninput="weight()" placeholder="Input"
+          <input ng-enter="airQuote()" type="number" class="form-control" oninput="weight()" placeholder="Input"
                  value=0
                  id="weightPerCase" name="weightPerCase">
           <span class="input-group-addon">kg</span>
         </div>
       </div>
-      <div class="col-sm-6 col-md-4 col-lg-3 Padding-remove-left">
+      <div class="col-sm-6 col-md-4 col-lg-3 Padding-remove-left" ng-show="airType">
         <label class=" control-label">Gross Weight/Pallet</label>
+
         <div class="input-group">
-          <input type="number" class="form-control" oninput="weight()" placeholder="Input"
+          <input ng-enter="airQuote()" type="number" class="form-control" oninput="weight()" placeholder="Input"
                  value=0 id="weightPerPallet" name="weightPerPallet">
           <span class="input-group-addon">kg</span>
         </div>
       </div>
     </div>
-	<hr>
+    <hr>
     <h4 class="freight_title">Charges Per Pallet </h4>
 
     <div class="form-group clearfix" id="Charges_Per_Pallet">
@@ -129,17 +134,17 @@
 
         <div class="input-group">
           <span class="input-group-addon">$</span>
-          <input type="number" class="form-control" placeholder="Input"
+          <input ng-enter="airQuote()" type="number" class="form-control" placeholder="Input"
                  value=0 id="trucking" name="trucking">
         </div>
       </div>
 
-      <div class="col-sm-6 col-md-4 col-lg-3 Padding-remove-left" id="coolguard_name">
+      <div class="col-sm-6 col-md-4 col-lg-3 Padding-remove-left" id="coolguard_name" ng-show="airType">
         <label class=" control-label">Cool Guard</label>
 
         <div class="input-group">
           <span class="input-group-addon">$</span>
-          <input type="number" class="form-control" placeholder="Input"
+          <input ng-enter="airQuote()" type="number" class="form-control" placeholder="Input"
                  value=40.00 id="coolGuard" name="coolGuard">
         </div>
       </div>
@@ -149,12 +154,12 @@
 
         <div class="input-group">
           <span class="input-group-addon">$</span>
-          <input type="number" class="form-control" placeholder="Input"
+          <input ng-enter="airQuote()" type="number" class="form-control" placeholder="Input"
                  value=0 id="otherPalletCharge" name="otherPalletCharge">
         </div>
       </div>
     </div>
-	<hr>
+    <hr>
     <h4 class="freight_title">Charges Per Shipment </h4>
 
     <div class="form-group clearfix" id="Charges_Per_Shipment">
@@ -164,17 +169,17 @@
 
         <div class="input-group">
           <span class="input-group-addon">$</span>
-          <input type="number" class="form-control" placeholder="Input"
+          <input ng-enter="airQuote()" type="number" class="form-control" placeholder="Input"
                  value=0 id="temperRecorder" name="tempRecorder">
         </div>
       </div>
 
-      <div class="col-sm-6 col-md-4 col-lg-3 Padding-remove-left">
+      <div class="col-sm-6 col-md-4 col-lg-3 Padding-remove-left" ng-show="airType">
         <label class=" control-label">Document</label>
 
         <div class="input-group">
           <span class="input-group-addon">$</span>
-          <input type="number" class="form-control" placeholder="Input"
+          <input ng-enter="airQuote()" type="number" class="form-control" placeholder="Input"
                  value=50.00 id="documentFee" name="documentFee">
         </div>
       </div>
@@ -184,7 +189,7 @@
 
         <div class="input-group">
           <span class="input-group-addon">$</span>
-          <input type="number" class="form-control" placeholder="Input"
+          <input ng-enter="airQuote()" type="number" class="form-control" placeholder="Input"
                  value=0 id="phytoFee" name="phytoFee">
         </div>
       </div>
@@ -194,7 +199,7 @@
 
         <div class="input-group">
           <span class="input-group-addon">$</span>
-          <input type="number" class="form-control" placeholder="Input"
+          <input ng-enter="airQuote()" type="number" class="form-control" placeholder="Input"
                  value=0 id="otherCharge" name="otherCharge">
         </div>
       </div>
@@ -202,4 +207,5 @@
   </form>
 </div>
 
-<script src="scripts/js/freightQuote.js"></script>
+
+

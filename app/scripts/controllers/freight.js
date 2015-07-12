@@ -9,6 +9,7 @@
  */
 angular.module('myexportquoteApp')
   .controller('FreightCtrl', function ($scope) {
+    $scope.airType = true;
     $scope.airQuote = function(){
       var airRate = document.getElementById("airRate").value;
       var NoCS = document.getElementById("NoCS").value;
@@ -37,17 +38,21 @@ angular.module('myexportquoteApp')
         }
       }
 	  else if(document.getElementById("LD3").checked){
+
+
 		  if (NoPS > 2) alert("LD3 CANNOT FIT MORE THAN 2 PALLETS");
         totalCost = airRate * 1 + + NoPS * trucking;
-        
+
         if (NoCS > 0 && NoPS > 0) {
           costPerCase = totalCost / (NoCS * NoPS);
         }
       }
       else if(document.getElementById("LD7").checked){
+
+
 		  if (NoPS > 6) alert("LD3 CANNOT FIT MORE THAN 6 PALLETS")
         totalCost = airRate * 1 + + NoPS * trucking;
-        
+
         if (NoCS > 0 && NoPS > 0) {
           costPerCase = totalCost / (NoCS * NoPS);
         }
@@ -56,3 +61,29 @@ angular.module('myexportquoteApp')
     };
 
   });
+
+
+  function goAction(url) {
+  if (url != '') {
+    quoteinformation.target = "_blank";//通过对目标的判定决定是否在新窗口打开网页
+  }
+  quoteinformation.action = url;//formname为当前form的name 多个form时 在此处获取form即可
+  quoteinformation.submit();//提交表单
+}
+
+
+function weight() {
+  var weightPerPallet = document.getElementById("weightPerPallet");
+  var NoCS = document.getElementById("NoCS");
+  var weightPerCase = document.getElementById("weightPerCase");
+
+  NoCS.addEventListener("input", function () {
+    weightPerPallet.value = (weightPerCase.value * NoCS.value).toFixed(2);
+  });
+  weightPerPallet.addEventListener("input", function () {
+    weightPerCase.value = (weightPerPallet.value / NoCS.value).toFixed(2);
+  });
+  weightPerCase.addEventListener("input", function () {
+    weightPerPallet.value = (weightPerCase.value * NoCS.value).toFixed(2);
+  });
+}

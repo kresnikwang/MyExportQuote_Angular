@@ -1,59 +1,56 @@
-<div class="container" id="packconverter"> 
+<div class="container" id="packconverter">
     <h2 align="center">Pack Converter</h2>
-	 
-	<hr> 
-	
+
+	<hr>
+
     <form class="form-inline" align="left">
     <div class="form-group">
 	<label class="control-label" for="price1">Enter Price:</label>
 	<div class="input-group">
 	<span class="input-group-addon">$</span>
-    <input type="text" id="price1" class="form-control"  placeholder="Input" oninput="price()">
+    <input type="text" id="price1" class="form-control"  placeholder="Input" min=0 ng-model="price" ng-init="price = 0">
 	</div>
   </div>
-  
+
    <div><br/></div>
 
     <div class="form-group">
 	<label class="control-label" for="quantity1">Original Pack Size:</label>
-    <input type="text" class="form-control"  placeholder="Input" id="quantity1" value="12" oninput="price()">
+    <input type="number" class="form-control"  placeholder="Input" min=0 ng-model="number1" ng-init="number1 = 12">
 	<label for="weight1" >X</label>
-	<input type="text" class="form-control"  placeholder="Input" id="weight1"   value="6" oninput="price()">
+	<input type="number" class="form-control"  placeholder="Input" id="weight1" min=0 ng-model="weight1" ng-init="weight1 = 6">
 	</div>
-	<select id="select1" class="form-control" name="unit1" onchange="price()">
-      <option selected='selected' value="g" >g</option>
-	  <option selected='selected' value="oz" >oz</option>  
+	<select id="select1" class="form-control" ng-model="selection1" ng-init="selection1 = units[0]" ng-options="unit.name for unit in units">
+      <!--<option ng-selected="selected" value="1" >g</option>-->
+	  <!--<option value="28.35" >oz</option>-->
     </select>
 
-
  <div><br/></div>
-  
+
 
 	<form class="form-inline" align="left">
     <div class="form-group">
 	<label class="control-label" for="quantity2">Quote Pack Size:</label>
-    <input type="text" class="form-control"  placeholder="Input" id="quantity2" value="12" oninput="price()">
-	<label class="" for="weight2">X</label>
-	<input type="text" class="form-control"  placeholder="Input" id="weight2"   value="4.4" oninput="price()">
+      <input type="number" class="form-control" placeholder="Input" min=0 ng-model="number2" ng-init="number2 = 12">
+      <label for="weight2" >X</label>
+      <input type="number" class="form-control" placeholder="Input" id="weight2" min=0 ng-model="weight2" ng-init="weight2 = 4.4">
 	</div>
-	<select id="select2" class="form-control" name="unit2" onchange="price()">
-      <option selected='selected' value="g" >g</option>
-	  <option selected='selected' value="oz" >oz</option>  
+	<select id="select2" class="form-control" ng-model="selection2"  ng-init="selection2 = units[0]" ng-options="unit.name for unit in units">
+      <option ng-selected="selection2" value="1" >g</option>
+	    <option value="28.35" >oz</option>
     </select>
 	</form>
-	
+
   <div><br/></div>
-    
+
 
   <div class="form-group form-inline">
   <label class="control-label" for="equalPrice">Price Equivalent:</label>
   <div class="input-group col-xs-4">
-  <span class="input-group-addon">$</span>
-  <input class="form-control" id="equalPrice" style="font-size:18px;" readonly>
+  <!--<span class="input-group-addon">$</span>-->
+  <input class="form-control" id="equalPrice" style="font-size:18px;" readonly value="{{ price * number2 * weight2 * selection2.id / (number1 * weight1 * selection1.id) | currency}}">
   </div>
   </div>
   </form>
-  
-</div>
 
-<script src="scripts/js/packconverter.js"></script>
+</div>
