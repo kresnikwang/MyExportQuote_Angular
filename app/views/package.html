@@ -1,56 +1,69 @@
 <div class="container" id="packconverter">
-    <h2 align="center">Pack Converter</h2>
+  <h2 align="center">Pack Converter</h2>
 
-	<hr>
+  <p align="center">Calculate Price Equivalence From Original Pack Style To New Pack Style</p>
+  <hr>
 
-    <form class="form-inline" align="left">
+  <form name="packageForm" class="form-inline" align="left" novalidate>
     <div class="form-group">
-	<label class="control-label" for="price1">Enter Price:</label>
-	<div class="input-group">
-	<span class="input-group-addon">$</span>
-    <input type="text" id="price1" class="form-control"  placeholder="Input" min=0 ng-model="price" ng-init="price = 0">
-	</div>
-  </div>
+      <label class="control-label" for="price1">Enter Price:</label>
 
-   <div><br/></div>
+      <div class="input-group">
+        <span class="input-group-addon">$</span>
+        <input type="number" id="price1" name="price1" class="form-control" placeholder="Input" min=0 ng-model="price"
+               ng-init="price = 0.00" required>
+      </div>
+      <p class="" ng-show="packageForm.price1.$invalid && !packageForm.price1.$pristine" class="help-block">Original Price is required.</p>
+    </div>
+
+    <div><br/></div>
 
     <div class="form-group">
-	<label class="control-label" for="quantity1">Original Pack Size:</label>
-    <input type="number" class="form-control"  placeholder="Input" min=0 ng-model="number1" ng-init="number1 = 12">
-	<label for="weight1" >X</label>
-	<input type="number" class="form-control"  placeholder="Input" id="weight1" min=0 ng-model="weight1" ng-init="weight1 = 6">
-	</div>
-	<select id="select1" class="form-control" ng-model="selection1" ng-init="selection1 = units[0]" ng-options="unit.name for unit in units">
+      <label class="control-label" for="quantity1">Original Pack Size:</label>
+      <input type="number" class="form-control" placeholder="Input" name="packNumber1" min=0 ng-model="number1" ng-init="number1 = 12" required>
+      <label for="weight1">X</label>
+      <input type="number" class="form-control" placeholder="Input" name="weight1" id="weight1" min=0 ng-model="weight1"
+             ng-init="weight1 = 6" required>
+    </div>
+    <select id="select1" class="form-control" ng-model="selection1" ng-init="selection1 = units[0]"
+            ng-options="unit.name for unit in units">
       <!--<option ng-selected="selected" value="1" >g</option>-->
-	  <!--<option value="28.35" >oz</option>-->
+      <!--<option value="28.35" >oz</option>-->
     </select>
-
- <div><br/></div>
-
-
-	<form class="form-inline" align="left">
-    <div class="form-group">
-	<label class="control-label" for="quantity2">Quote Pack Size:</label>
-      <input type="number" class="form-control" placeholder="Input" min=0 ng-model="number2" ng-init="number2 = 12">
-      <label for="weight2" >X</label>
-      <input type="number" class="form-control" placeholder="Input" id="weight2" min=0 ng-model="weight2" ng-init="weight2 = 4.4">
-	</div>
-	<select id="select2" class="form-control" ng-model="selection2"  ng-init="selection2 = units[0]" ng-options="unit.name for unit in units">
-      <option ng-selected="selection2" value="1" >g</option>
-	    <option value="28.35" >oz</option>
-    </select>
-	</form>
-
-  <div><br/></div>
+    <p class="" ng-show="packageForm.packNumber1.$invalid && !packageForm.packNumber1.$pristine" class="help-block">Pack Number is required.</p>
+    <p class="" ng-show="packageForm.weight1.$invalid && !packageForm.weight1.$pristine" class="help-block">Pack Weight is required.</p>
+    <div><br/></div>
 
 
-  <div class="form-group form-inline">
-  <label class="control-label" for="equalPrice">Price Equivalent:</label>
-  <div class="input-group col-xs-4">
-  <!--<span class="input-group-addon">$</span>-->
-  <input class="form-control" id="equalPrice" style="font-size:18px;" readonly value="{{ price * number2 * weight2 * selection2.id / (number1 * weight1 * selection1.id) | currency}}">
-  </div>
-  </div>
+
+      <div class="form-group">
+        <label class="control-label" for="quantity2">Quote Pack Size:</label>
+        <input type="number" class="form-control" placeholder="Input" name="packNumber2" min=0 ng-model="number2" ng-init="number2 = 12" required>
+        <label for="weight2">X</label>
+        <input type="number" class="form-control" placeholder="Input" name="weight2" id="weight2" min=0 ng-model="weight2"
+               ng-init="weight2 = 4.4" required>
+      </div>
+      <select id="select2" class="form-control" ng-model="selection2" ng-init="selection2 = units[0]"
+              ng-options="unit.name for unit in units">
+        <option ng-selected="selection2" value="1">g</option>
+        <option value="28.35">oz</option>
+      </select>
+    <p class="" ng-show="packageForm.packNumber2.$invalid && !packageForm.packNumber2.$pristine" class="help-block">Pack Number is required.</p>
+    <p class="" ng-show="packageForm.weight2.$invalid && !packageForm.weight2.$pristine" class="help-block">Pack Weight is required.</p>
+
+    <div><br/></div>
+
+
+    <div class="form-group form-inline">
+      <label class="control-label" for="equalPrice">Price Equivalent:</label>
+
+      <div class="input-group col-xs-4">
+        <!--<span class="input-group-addon">$</span>-->
+        <input class="form-control" id="equalPrice" style="font-size:18px;" readonly
+               value="{{ price * number2 * weight2 * selection2.id / (number1 * weight1 * selection1.id) | currency}}">
+      </div>
+    </div>
   </form>
+  <div><br/></div>
 
 </div>

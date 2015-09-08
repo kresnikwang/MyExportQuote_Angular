@@ -68,7 +68,7 @@ margin-bottom:0px;}
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
-    max-width: 730px;
+    max-width: 900px;
   }
 
   /* Remove the padding we set earlier */
@@ -113,6 +113,22 @@ margin-bottom:0px;}
 
 .item img {
   display: block;
+  transition-timing-function: ease-in-out;
+  transition-duration: 1s;
+
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"; // IE8
+  filter: alpha(opacity=100); // IE 5-7
+  opacity: 1;
+}
+
+.item img:hover {
+  -ms-transform: scale(0.8,0.8); /* IE 9 */
+  -webkit-transform: scale(0.8,0.8); /* Safari */
+  transform: scale(0.8,0.8);
+
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; // IE8
+  filter: alpha(opacity=50); // IE 5-7
+  opacity: 0.5;
 }
 
 p.title {
@@ -154,6 +170,14 @@ p.title {
 
 .Padding-remove-left {
   padding-left: 0 !important;
+}
+
+.Padding-remove-top{
+  padding-top: 0 !important;
+}
+
+.navbar-logo{
+  margin-left: 15px;
 }
 
 /* Sidebar                                               */

@@ -64,10 +64,10 @@ angular.module('myexportquoteApp')
 
   function goAction(url) {
   if (url != '') {
-    quoteinformation.target = "_blank";//通过对目标的判定决定是否在新窗口打开网页
+    quoteInformation.target = "_blank";//通过对目标的判定决定是否在新窗口打开网页
   }
-  quoteinformation.action = url;//formname为当前form的name 多个form时 在此处获取form即可
-  quoteinformation.submit();//提交表单
+  quoteInformation.action = url;//formname为当前form的name 多个form时 在此处获取form即可
+  quoteInformation.submit();//提交表单
 }
 
 

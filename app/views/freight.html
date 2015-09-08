@@ -1,8 +1,10 @@
 <div class="container">
 
   <h2 align="center">Air Freight</h2>
+  <p align="center">Calculate Air Freight Cost Including Pre-Carriage Charge & MISC</p>
+  <hr>
 
-  <form class="form" role="form" target="" align="left" ng-submit="airQuote()" name="quoteinformation">
+  <form class="form" role="form" target="" align="left" ng-submit="airQuote()" name="quoteInformation">
 
     <div class="form-group" id="result">
       <div class="col-sm-12 Padding-remove-left">
@@ -61,7 +63,6 @@
 
     <div class="form-group clearfix" id="airrate_name">
       <div class="col-sm-6 col-md-6 col-lg-6 Padding-remove-left">
-        <form>
           <label class=" control-label">
             <input type="radio" name="airRateType" id="looseRate" ng-checked="true" ng-model="airType"
                    ng-value="true">
@@ -69,14 +70,14 @@
           <label class=" control-label">
             <input type="radio" name="airRateType" id="LD7" ng-model="airType" ng-value="false">
             LD3/LD7(PMC)</label>
-        </form>
+
 
         <div class="input-group">
         <span class="input-group-addon">
         $
         </span>
-          <input ng-enter="airQuote()" type="text" class="form-control" placeholder="Input"
-                 value=2.00 id="airRate">
+          <input ng-enter="airQuote()" type="number" class="form-control" placeholder="Input"
+                 value=2.00 id="airRate" name="airRate" required>
         </div>
       </div>
 
