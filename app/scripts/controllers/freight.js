@@ -37,21 +37,20 @@ angular.module('myexportquoteApp')
           costPerCase = totalCost / (NoCS * NoPS);
         }
       }
-	  else if(document.getElementById("LD3").checked){
-
-
-		  if (NoPS > 2) alert("LD3 CANNOT FIT MORE THAN 2 PALLETS");
-        totalCost = airRate * 1 + + NoPS * trucking;
-
-        if (NoCS > 0 && NoPS > 0) {
-          costPerCase = totalCost / (NoCS * NoPS);
-        }
-      }
+      //else if(document.getElementById("LD3").checked){
+      //
+      //
+		//  if (NoPS > 2) alert("LD3 CANNOT FIT MORE THAN 2 PALLETS");
+      //  totalCost = airRate * 1 + + NoPS * trucking;
+      //
+      //  if (NoCS > 0 && NoPS > 0) {
+      //    costPerCase = totalCost / (NoCS * NoPS);
+      //  }
+      //}
       else if(document.getElementById("LD7").checked){
 
-
 		  if (NoPS > 6) alert("LD3 CANNOT FIT MORE THAN 6 PALLETS")
-        totalCost = airRate * 1 + + NoPS * trucking;
+        totalCost = airRate * 1 + NoPS * trucking + phytoFee * 1 + temperRecorder*1 + otherPalletCharge * NoPS + otherCharge * 1;
 
         if (NoCS > 0 && NoPS > 0) {
           costPerCase = totalCost / (NoCS * NoPS);

@@ -19,6 +19,15 @@ angular
     'ui.sortable',
     'LocalStorageModule'
   ])
+  .controller('HeaderController',function($scope, $location)
+  {
+    $scope.isActive = function(viewLocation){
+      return viewLocation === $location.path();
+      console.log(viewLocation);
+      console.log($location.path());
+    };
+
+  })
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
@@ -39,7 +48,7 @@ angular
       })
       .otherwise({
         redirectTo: '/'
-      });  
+      });
   })
   .directive('ngEnter', function () {
     return function (scope, element, attrs) {
@@ -52,14 +61,20 @@ angular
             }
         });
     };
-}); 
-
-
-  
-/////////////////////////////////////////////////////
-$(document).ready(function() {
-    $(".header li").on("click", function() {
-        $(".header li").removeClass("active");
-        $(this).addClass("active");
-    });
 });
+
+
+
+/////////////////////////////////////////////////////
+//$(document).ready(function() {
+//    $(".header li").on("click", function() {
+//        $(".header li").removeClass("active");
+//        $(this).addClass("active");
+//    });
+//});
+function HeaderController($scope, $location)
+{
+  $scope.isActive = function (viewLocation) {
+    return viewLocation === $location.path();
+  };
+}
